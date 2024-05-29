@@ -19,3 +19,11 @@ use App\Http\Controllers\PharmacyController;
 
 Route::get('/', [PharmacyController::class, 'index']);
 Route::post('/find', [PharmacyController::class, 'find']);
+
+
+Route::get('/get-building-data', [PharmacyController::class, 'getBuildingData']);
+Route::get('/get-road-data', [PharmacyController::class, 'getRoadData']);
+Route::get('/get-natural-data', [PharmacyController::class, 'getNaturalData']);
+Route::get('/get-landuse-data', [PharmacyController::class, 'getLanduseData']);
+
+Route::get('/map', [PharmacyController::class, 'showMap']);
