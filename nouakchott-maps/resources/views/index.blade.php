@@ -2,22 +2,40 @@
 
 @section('content')
 <style>
+    body {
+    justify-content: center;
+    align-items: center;
+    background: #F9F6EE;
+    min-height: 100vh;
+    }
     button{
-        background-color:green;
+        background-color:blue;
+        font-size:20px;
+        width:30%;
+        border-radius:7px;
         color:white;
         font-weight:700;
         padding:10px;
         border:none;
-        margin: 10px 0px 20px 45%;
+        margin-top:20px;
+        cursor:pointer;
+    }
+    form{
+        display:flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
-<div id="map" style="height: 600px;"></div>
+<div id="map" style="height: 600px"></div>
+
 <form id="location-form" action="/find" method="post">
     @csrf
     <input type="hidden" name="latitude" id="latitude" placeholder="Latitude">
     <input type="hidden" name="longitude" id="longitude" placeholder="Longitude">
-    <button type="submit">Find Nearest Pharmacies</button>
+    <button type="submit">Trouver les plus proches pharmacies</button>
 </form>
+
+
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
     var map = L.map('map').setView([0, 0], 13);
